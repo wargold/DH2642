@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container-fluid" id="StartScreen">
+    <h2>Dinner Planner</h2>
+</div>
+
+<!-- FinalView, title of the view that show the user that they can print out recipe -->
+<div class="container-fluid border" id="finalTitleView">
+    <div class="col-md-8 ">
+        <h2>My Dinner:
+            <div id="numbOfGuest" style="display: inline"></div>
+            people
+        </h2>
+    </div>
+    <div class="col-xs-2 ">
+        <button id='goBackEdit' class='btn btn-lg btn-warning border'>
+            <span>Go back and edit dinner</span></button>
+    </div>
+</div>
+
+<!-- FinalView, the view that show the user that they can print out recipe and the total price -->
+<div class="container-fluid" id="finalDinnerView">
+    <div class="row">
+        <div class="col-md-8 text-center" id="dispFinalDinnerInfo">
+        </div>
+        <div class="col-sm-4" id="finTotPrice">
+            <h1>Total:
+                <div id="finalDinnerPrice"></div>
+            </h1>
+        </div>
+    </div>
+    <div class="col-sm-12" class="row">
+        <div style="text-align:center;">
+            <button id='printFullRecipeButt' class='btn btn-lg btn-warning border'>Print Full Recipe</button>
+        </div>
+    </div>
+</div>
+
+<!-- StartView, the first view the user interact with when launching the Dinner Planner i.e (index.html)  -->
+<div class="container-fluid" id="startView">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center" id="Lorem">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit
+                amet felis sit amet lectus venenatis congue et sed odio. Aliquam in mi vitae nunc commodo
+                luctus. Nam euismod commodo elit nec convallis. Vivamus eget tincidunt risus, ut laoreet
+                sapien. Nullam sapien mi, facilisis finibus pulvinar non, feugiat eu enim.
+                Nunc a lobortis mi.</p>
+            <button id='makeDinner' class='btn btn-lg btn-warning btn border'><span>Create new dinner</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid scrollable">
+    <div class="col-sm-3 maube">
+        <!-- MY Dinner View, the side view shown to the user -->
+        <nav role="navigation" class="navbar navbar-default" id="myDinnerView">
+            <div class="navbar-header">
+                <font class="collapsed-addon" style="font-weight: bolder;">My Dinner</font>
+                <font class="collapsed-addon" id="collapsedPrice"></font>
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <h3>My Dinner</h3><br>
+                    <h8>People</h8>
+                    <input id="numberGuestsChooser" min="0" max="20" value="" type="number">
+                    <div class="row" id="SideNavBarDish">
+                        <div class="col-xs-6">Dish Name</div>
+                        <div class="col-xs-6 text-right">Cost</div>
+                    </div>
+                    <div id="dishChoosenFromMenu">
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 text-right" id='currentDinnerCost' style='margin-bottom: 10px'></div>
+                        <button id='confDinnerSideButt' class='btn btn-lg btn-warning border'>
+                            <span>Confirm Dinner</span></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    </nav>
+
+    <!-- Search Function View, the user can enter a search key and find a dish if it's in the system i.e (dinnermodel
+    contains that dish)-->
+    <div class="autoAdjust">
+        <div class="col-sm-9 autofix" id="mainView">
+            <div class="col-xs-12">
+                <div class="table" id="searchForDish">
+                    <font id="findADishHeader">Find A Dish</font>
+                    <input name="searchDish" placeholder="Enter key words" id="searchForDishes" value="" type="text">
+                    <select id="dishCategory">
+                        <option>starter</option>
+                        <option>main dish</option>
+                        <option>dessert</option>
+                    </select>
+                    <button id='searchForDishButt' class='btn btn-lg btn-warning border'>Search</button>
+                    <hr>
+                </div>
+                <!-- Displays the dishes in the dinnemodel.js in different categories. We add the dishes by appending
+                 html tags in the DishDisplayView.js -->
+                <div class="table" id="dishDisplayView">
+                    <div class="table" id="showDishes">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display the full info about a dish when the user clicks on one of the dishes. Clicking is handled by
+            the controller dishFullInfoViewControl.js and we add the full info about a specific dish by appending
+                 html tags in the dishFullInfoView.js-->
+            <div class="col-md-12" id="infoAboutDish">
+                <div class="col-md-8">
+                    <h4 id="dishPicHeader"></h4>
+                    <img src="" alt='Dish Picture' id="detailImage"/>
+                    <div id="backButtonDishDet">
+                        <button id='backButtonDishInfo' class='btn btn-lg btn-warning border'>back to Select Dish
+                        </button>
+                    </div>
+                    <p id="moreDishDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit
+                        amet felis sit amet lectus venenatis congue et sed odio. Aliquam in mi vitae nunc commodo
+                        luctus. Nam euismod commodo elit nec convallis. Vivamus eget tincidunt risus, ut laoreet
+                        sapien. Nullam sapien mi, facilisis finibus pulvinar non, feugiat eu enim.
+                        Nunc a lobortis mi.</p>
+                    <h2>Preperation</h2><br>
+                    <p id="preperationInfo"></p>
+                </div>
+                <div class="col-md-4" id="ingredientView">
+                    <h3>Ingredients for
+                        <div id="numbOfGuestIngredient"></div>
+                        people
+                    </h3>
+                    <hr>
+                    <div id="displayDishIngredient"></div>
+                    <hr>
+                    <button id='addDishToMenu' class='btn btn-lg btn-warning border'>Confirm Dish
+                    </button>
+                    <div class="col-md-4" id="totalPriceOfIngredient">
+                    </div>
+                </div>
+            </div>
+            <!-- Print out the recipe of the dishes that the user have bought, fullRecipeView.js add html tags
+             so that the recipe are shown to the user-->
+        </div>
+    </div>
+    <div class="col-lg-12" id="displayRecipeView"></div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<!-- The application JavaScript code -->
+<script src="js/app.js"></script>
+<script src="js/model/dinnerModel.js"></script>
+<script src="js/controller/startViewControl.js"></script>
+<script src="js/view/dishInfoView.js"></script>
+<script src="js/controller/dishInfoViewControl.js"></script>
+<script src="js/view/searchDishView.js"></script>
+<script src="js/controller/searchDishViewControl.js"></script>
+<script src="js/view/dishDisplayView.js"></script>
+<script src="js/controller/dishDisplayViewControl.js"></script>
+<script src="js/view/dishFullInfoView.js"></script>
+<script src="js/controller/dishFullInfoViewControl.js"></script>
+<script src="js/view/finalNavBarView.js"></script>
+<script src="js/controller/FinalNavBarViewControl.js"></script>
+<script src="js/view/finalDishView.js"></script>
+<script src="js/controller/FinalDishViewControl.js"></script>
+<script src="js/view/fullRecipeView.js"></script>
+</body>
+</html>
