@@ -18,7 +18,7 @@ var DinnerModel = function () {
     // Global Variables
     var numbOfGuests = 5;
     var menu = [];
-    var categories = ["starter", "main dish", "dessert"];
+    var categories = ["all","starter", "main dish", "dessert"];
     var currentCategory = categories[0];
     var searchDish = "";
     var clickedDishID = 0;
@@ -103,21 +103,25 @@ var DinnerModel = function () {
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
     //if you don't pass any filter all the dishes will be returned
     this.getAllDishes = function (type, filter) {
-        return $(dishes).filter(function (index, dish) {
-            var found = true;
-            if (filter) {
-                found = false;
-                $.each(dish.ingredients, function (index, ingredient) {
-                    if (ingredient.name.indexOf(filter) != -1) {
+        if(type=="all"){
+            return dishes;
+        }else {
+            return $(dishes).filter(function (index, dish) {
+                var found = true;
+                if (filter) {
+                    found = false;
+                    $.each(dish.ingredients, function (index, ingredient) {
+                        if (ingredient.name.indexOf(filter) != -1) {
+                            found = true;
+                        }
+                    });
+                    if (dish.name.toLowerCase().indexOf(filter) != -1) {
                         found = true;
                     }
-                });
-                if (dish.name.toLowerCase().indexOf(filter) != -1) {
-                    found = true;
                 }
-            }
-            return dish.type == type && found;
-        });
+                return dish.type == type && found;
+            });
+        }
     }
 
     //function that returns a dish of specific ID
