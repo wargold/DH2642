@@ -8,7 +8,7 @@ var DishInfoViewControl = function (view, model,hideDispView) {
     });
 
     var container = view.getContainer();
-    $(container).on('click', '.removeDish', function(){
+    $(container).on('click', '.close', function(){
         model.removeDishFromMenus(this.id);
     });
 }

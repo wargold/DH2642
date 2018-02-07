@@ -4,7 +4,6 @@ var DishFullInfoView = function (container, model) {
     this.addDishToMenuButton = container.find('#addDishToMenu');
     this.backDishInfoButton = container.find('#backButtonDishInfo');
 
-
     this.update = function () {
         var dish;
         dish = model.getDish(model.getClickedDishID());
@@ -22,7 +21,7 @@ var DishFullInfoView = function (container, model) {
                 ingredientText +=
                     "<div class='row'> \ <div class='col-lg-4'>" + Math.round(ingredient.quantity * numbOgGuest) + " " + ingredient.unit + "" +
                     "</div><div class='col-lg-4'>" + ingredient.name + "</div><div class='col-lg-4'>SEK " +
-                    ingredient.price * numbOgGuest + " \</div></div>";
+                    ingredient.price * numbOgGuest + "\</div></div>";
                 sum += ingredient.price * numbOgGuest;
             }
             var numbOfGuest = model.getNumberOfGuests();

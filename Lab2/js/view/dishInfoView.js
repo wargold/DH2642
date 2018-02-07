@@ -16,7 +16,7 @@ var DishInfoView = function (container, model) {
         for (var i = 0; i < menu.length; i++) {
             dish = menu[i];
             output += "<div class='row'><div class='col-md-6'>" + dish.name + "</div><div class='col-md-6 text-right'>"
-                + model.getDishPrice(dish)+ "<button type='button' class='close removeDish' aria-label='Close' id=\"" + dish.id + "\">" +
+                + model.getDishPrice(dish)+ "<button type='button' class='close' aria-label='Close' id=\"" + dish.id + "\">" +
                 "<span aria-hidden='true'>&times;</span></button>" + "</div></div>";
         }
         container.find("#dishChoosenFromMenu").html(output);
