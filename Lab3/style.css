@@ -1,0 +1,233 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#StartScreen {
+    color: black;
+    background-color: darkgray;
+    text-align: center;
+}
+
+.autoAdjust {
+    display: flex;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+.header {
+    border: 1px solid #000;
+    background: darkgray;
+    font-weight: bolder;
+}
+
+.allCategoryDishesTitle {
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container-fluid.scrollable {
+    height: 100%; /*Sets the scrollable area to 100% of the viewport*/
+    overflow: auto; /*Allows the scrollable area to have a scrollbar based on the height of its content*/
+}
+
+.btn {
+    color: black;
+    background-color: darkorange;
+    font-weight: bolder;
+    min-width: 10%;
+}
+
+#loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(225, 225, 225, 0.6) url('gif/loadingCircle.gif') 50% 50% no-repeat;
+}
+
+
+
+#Lorem {
+    padding-top: 10%;
+}
+
+#makeDinner {
+    transform: translateY(200%);
+    background-color: darkorange;
+    color: black;
+    font-weight: bolder;
+}
+
+.border {
+    border: 1px solid #000;
+}
+
+.hideNav {
+    display: none;
+}
+
+#myDinnerView {
+    padding: 20px;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .collapsed-addon {
+        display: none;
+    }
+}
+
+#totalPriceOfIngredient {
+    float: right;
+    position: relative;
+}
+
+#SideNavBarDish {
+    background-color: darkgray;
+    margin-top: 15px;
+
+}
+
+#finalTitleView {
+    padding: 30px 40px;
+    display: none;
+}
+
+#finalDinnerPrice {
+    color: #661c24;
+    font-weight: bolder;
+}
+
+#searchForDishes {
+    margin-left: 5%;
+}
+
+#backButtonDishDet {
+    float: right;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#finTotPrice {
+    position: relative;
+    margin: auto;
+    display: inline;
+    top: 95%;
+    transform: translateY(95%);
+    border-left: 1px solid #000;
+}
+
+#findADishHeader {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#collapsedPrice {
+    color: red;
+    font-weight: bolder;
+}
+
+#printFullRecipeButt {
+    margin: auto;
+    display: flex;
+}
+
+#dishCategory {
+    margin-left: 50px;
+    min-width: 30%;
+}
+
+#dishDisplayView {
+    margin: 0;
+    display: none;
+
+}
+
+#searchForDish {
+    display: none;
+    padding: 15px;
+}
+
+#showDishes {
+    padding: 20px;
+}
+
+.allCategoryDishes:hover {
+    cursor: pointer;
+}
+
+.allCategoryDishes {
+    margin-right: 20px;
+
+}
+
+.autofix {
+    margin: 0px 15px;
+    padding: 15px;
+}
+
+#myDinnerView {
+    margin: 0px -30px;
+}
+
+#collapsedPrice {
+    margin: 0px 40px;
+}
+
+#searchForDishButt {
+    margin: 0px 40px;
+}
+
+.displayRecipe img, .allCategoryDishes img {
+    width: 150px;
+    height: 150px;
+}
+
+.displayRecipe {
+    margin-top: 5px;
+}
+
+#infoAboutDish, #myDinnerView, #displayRecipeView, #finalDinnerView {
+    display: none;
+}
+
+#mainView {
+    display: none;
+    height: 100%;
+    width: 80%;
+    padding: 0;
+}
+
+img#detailImage {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+#ingredientView {
+    background-color: #ffdb75;
+    padding: 10px;
+}
+
+#numbOfGuestIngredient {
+    display: inline;
+}
+
+#dispFinalDinnerInfo {
+    padding-top: 10px;
+}
+
+#printFullRecipeButt {
+}
+
+.btnas {
+    background-color: red;
+}
+
