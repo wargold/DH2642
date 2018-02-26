@@ -21,11 +21,7 @@ var DishFullInfoView = function (container, model) {
                     container.find("#moreDishDescription").html(dishInfo);
                     container.find("#preperationInfo").html(ingredient.instructions);
                     numbOfGuest = model.getNumberOfGuests();
-                    //console.log(ingredient.extendedIngredients.length);
-
                     ingredient.extendedIngredients.forEach(function (ingd) {
-                        //console.log(dishID);
-                        //console.log(ingd.name);
                         ingredientText += "<div class='row'> \ <div class='col-lg-4'>" + Math.round(ingd.amount * numbOfGuest) + " " + ingd.unit + "" +
                             "</div><div class='col-lg-4'>" + ingd.name + "</div><div class='col-lg-4'>SEK " +
                             Math.round(ingd.amount * numbOfGuest) + "\</div></div>";

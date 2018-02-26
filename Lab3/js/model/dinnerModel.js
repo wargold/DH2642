@@ -90,7 +90,7 @@ var DinnerModel = function () {
     //Removes dish from menu
     this.removeDishFromMenu = function (id) {
         menu.splice(id, 1);
-        notifyObservers();
+        notifyObservers(notifyEvents.Menu);
     }
     //Removes dish from menu
     this.removeDishFromMenus = function (id) {
