@@ -1,0 +1,22 @@
+#dispFinalDinnerInfo {
+    padding-top: 10px;
+}
+
+#finTotPrice {
+    position: relative;
+    margin: auto;
+    display: inline;
+    top: 95%;
+    transform: translateY(95%);
+    border-left: 1px solid #000;
+}
+
+#finalDinnerPrice {
+    color: #661c24;
+    font-weight: bolder;
+}
+
+#printFullRecipeButt {
+    margin: auto;
+    display: flex;
+}

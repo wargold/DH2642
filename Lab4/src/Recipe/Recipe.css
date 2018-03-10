@@ -1,0 +1,14 @@
+.displayRecipe img {
+    width: 150px;
+    height: 150px;
+}
+
+.displayRecipe {
+    margin-top: 5px;
+}
+
+.allCategoryDishesTitle {
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+}

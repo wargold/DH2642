@@ -1,0 +1,29 @@
+#confDinnerSideButt {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.removeDishSideBar{
+    transform: translateX(10%) translateY(-5%);
+}
+
+@media (min-width: 990px) {
+#people{
+    transform: translateX(-132px) translateY(52px);
+}}
+
+#ksdsd{
+    margin-bottom: 5px;
+}
+
+#teresfsdf {
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-90%) translateY(-40%);
+}
+
+#btnText{
+    transform: translateY(-40%);
+}
