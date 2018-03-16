@@ -91,7 +91,7 @@ class Dishes extends React.Component {
                              className="thumbNail">
                             <div className="panel panel-default allCategoryDishes border" key={image.id}
                                  value={image.id}>
-                                <img style={{width: "160px", height: "160px",}} className='img-responsive'
+                                <img style={{width: "160px", height: "160px",}} className='img-responsive' alt={image.name}
                                      key={image.id}
                                      src={"https://webknox.com/recipeImages/" + image.imageUrls}/>
                                 <div className="panel-footer allCategoryDishesTitle"

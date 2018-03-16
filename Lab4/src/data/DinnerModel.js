@@ -24,7 +24,6 @@ const DinnerModel = function () {
             menu=[]
         }else{
             menu=JSON.parse(localStorage.getItem("menu"));
-            console.log(JSON.parse(localStorage.getItem("menu")))
         }
     }
 
@@ -58,8 +57,6 @@ const DinnerModel = function () {
                 menu.splice(i, 1);
             }
         }
-        console.log("Blir fel här")
-        console.log(obj)
         menu.push(obj);
         localStorage.setItem("menu", JSON.stringify(menu));
         notifyObservers();

@@ -25,9 +25,10 @@ class Confirm extends Component {
         for (var i = 0; i < menu.length; i++) {
             dish = menu[i];
             list.push(
-                <div class='col-lg-2 allCategoryDishes' value={dish.id}><img class='img-responsive' src={dish.image}/>
+                <div className='col-lg-2 allCategoryDishes' key={dish.id} value={dish.id}><img
+                    className='img-responsive' src={dish.image} alt={dish.name}/>
                     <br/>
-                    <h4 class='allCategoryDishesTitle'>{dish.name}</h4>
+                    <h4 className='allCategoryDishesTitle'>{dish.name}</h4>
                     <p>{Math.round(dish.price * modelInstance.getNumberOfGuests())}{" SEK"}</p></div>
             )
             sum += Math.round(dish.price * this.state.numberOfGuests);
@@ -50,7 +51,7 @@ class Confirm extends Component {
                             </h1>
                         </div>
                     </div>
-                    <div className="col-sm-12" class="row">
+                    <div className="col-sm-12 row">
                         <div style={{textAlign: "center"}}>
                             <Link to="/recipe">
                                 <button id='printFullRecipeButt' className='btn btn-lg btn-warning border'>Print Full

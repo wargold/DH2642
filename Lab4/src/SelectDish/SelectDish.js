@@ -24,7 +24,6 @@ class SelectDish extends Component {
     componentDidMount = () => {
         // when data is retrieved we update the state
         // this will cause the component to re-render
-        console.log(this.state.isloading)
         this.props.model.addObserver(this);
         modelInstance.getIngredient(this.state.dishID).then(dishes => {
             this.setState({
@@ -43,15 +42,15 @@ class SelectDish extends Component {
     exit = () => {
         const dish = this.createDishInfo(this.state.dishInfo);
         modelInstance.addDishToMenu(dish);
-        alert("You've added dish " + dish.name + "." + '\n' + "The Total Cost for " + this.state.numberOfGuests +
-            " people " + "are " + Math.round(dish.price * this.state.numberOfGuests) + " SEK.")
+        const dishPrice= Math.round(dish.price * this.state.numberOfGuests)
+        alert( `You've added dish ${dish.name}.\n The Total Cost for ${this.state.numberOfGuests} people are ${dishPrice} SEK.`)
     }
 
     createDishInfo = (data) => {
         const id = data.id;
         const name = data.title;
         const image = data.image;
-        const readyMinInfo = `This dish will take ${data.readyInMinutes} minutes to prepare. For more information please `
+        const readyMinInfo = `This dish will take ${data.readyInMinutes} minutes to prepare. For more information please`
         const readyMinInfoLink = data.spoonacularSourceUrl;
         const instructions = data.instructions;
         const ingredients = data.extendedIngredients;
@@ -125,7 +124,7 @@ class SelectDish extends Component {
                                 <div className="col-md-8">
                                     <h4>{dish.name}</h4>
                                     <img style={{width: "160px", height: "160px",}} className='img-responsive'
-                                         src={dish.image}/>
+                                         src={dish.image} alt={dish.name}/>
                                     <div id="backButtonDishDet">
                                         <Link to="/search">
                                             <button className='btn btn-lg btn-warning border'>back to

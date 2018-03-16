@@ -17,15 +17,14 @@ class Confirm extends Component {
         var list = [];
         var menu = modelInstance.getFullMenu();
         for (var i = 0; i < menu.length; i++) {
-            console.log(dish.readyMinInfoLink);
             dish = menu[i];
             list.push(
-                <div class='row displayRecipe'>
-                    <div class='col-lg-2'><img class='img-responsive' src={dish.image}/>
+                <div className='row displayRecipe' key={dish.id}>
+                    <div className='col-lg-2'><img className='img-responsive' src={dish.image} alt={dish.name}/>
                     </div>
-                    <div class='col-lg-4'><h4 class='allCategoryDishesTitle'> {dish.name}</h4>
+                    <div className='col-lg-4'><h4 className='allCategoryDishesTitle'> {dish.name}</h4>
                         <p> {dish.readyMinInfo}<a href={dish.readyMinInfoLink}>Visit this website.</a></p></div>
-                    <div class='col-lg-4'><h4 class='allCategoryDishesTitle'>{"Preparation"}</h4>
+                    <div className='col-lg-4'><h4 className='allCategoryDishesTitle'>{"Preparation"}</h4>
                         <p> {dish.instructions}</p></div>
                 </div>
         )
@@ -38,7 +37,7 @@ class Confirm extends Component {
         return (
             <div>
                 <SubHeader/>
-                <div class="col-lg-12">{this.getInfoMenu()}</div>
+                <div className="col-lg-12">{this.getInfoMenu()}</div>
             </div>
         );
     }
